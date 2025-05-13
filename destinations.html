@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Напрямки - TravelExplorers</title>
+  <style>
+    :root {
+      --primary-color: #2A9D8F;
+      --secondary-color: #264653;
+      --accent-color: #E9C46A;
+      --light-bg: #F4F1DE;
+      --text-dark: #333;
+    }
+    
+    body {
+     font-family: 'Rosarivo', Regular;
+      background: var(--light-bg);
+      color: var(--text-dark);
+      margin: 0;
+    }
+    
+    .container {
+      max-width: 1350px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    
+    header {
+      position: relative;
+      color: white;
+    }
+    
+    header img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+      color: var(--accent-color);
+    }
+    
+    .logo a {
+      text-decoration: none;
+      color: var(--accent-color);
+    }
+    
+    .nav {
+      display: flex;
+      gap: 15px;
+      margin-right: 20px;
+    }
+    
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      background-color: rgba(233, 196, 106, 0.2);
+      white-space: nowrap;
+    }
+    
+    .nav a:hover {
+      background-color: var(--accent-color);
+      color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+    
+    .title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      color: var(--accent-color);
+      margin-bottom: 30px;
+    }
+    
+    section {
+      padding: 20px;
+    }
+    
+    h2 {
+      color: var(--secondary-color);
+    }
+    
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .destination-card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+
+    }
+    
+
+    
+    .destination-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    
+    .destination-info {
+      padding: 15px;
+    }
+    
+    .destination-info h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    
+    .cta-button {
+      background: var(--primary-color);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      background: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+    
+    footer {
+      background: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    footer a {
+      color: var(--accent-color);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    /* Адаптивні стилі для мобільних пристроїв */
+    @media (max-width: 480px) {
+      header img {
+        height: 180px;
+      }
+      
+      .overlay {
+        padding: 15px;
+      }
+      
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .logo {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      
+      .nav {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-right: 0;
+        width: 100%;
+      }
+      
+      .nav a {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+      
+      .title {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      
+      section {
+        padding: 15px;
+      }
+      
+      h2 {
+        font-size: 20px;
+      }
+      
+      .destinations-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      .destination-card img {
+        height: 150px;
+      }
+      
+      .destination-info {
+        padding: 12px;
+      }
+      
+      .destination-info h3 {
+        font-size: 18px;
+      }
+      
+      .destination-info p {
+        font-size: 14px;
+      }
+      
+      .cta-button {
+        padding: 6px 12px;
+        font-size: 14px;
+      }
+      
+      footer {
+        padding: 15px;
+      }
+      
+      footer div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      
+      footer a {
+        margin: 5px 0;
+      }
+      
+      .container {
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="https://kompastour.com/useruploads/regions/region_8ede6b8fe2.jpg" alt="Світові напрямки">
+      <div class="overlay">
+        <div class="topbar">
+          <div class="logo"><a href="index.html">TRAVEL EXPLORERS</a></div>
+          <div class="nav">
+            <a href="destinations.html">Напрямки</a>
+            <a href="blog.html">Блог</a>
+            <a href="tips.html">Поради</a>
+            <a href="gallery.html">Галерея</a>
+          </div>
+        </div>
+        <div class="title">Напрямки подорожей</div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Популярні країни та регіони</h2>
+      <div class="destinations-grid">
+        <div class="destination-card">
+          <img src="https://antonivtours.com/wp-content/uploads/2017/12/5714e58f64500.jpg" alt="Нова Зеландія">
+          <div class="destination-info">
+            <h3>Нова Зеландія</h3>
+            <p>Неймовірна природа, водоспади, гейзери та маорійська культура</p>
+            <a href="new-zealand.html" class="cta-button">Детальніше</a>
+          </div>
+        </div>
+        
+        <div class="destination-card">
+          <img src="https://aristeya.com.ua/wp-content/uploads/2024/01/greece-3384386_1920.jpg" alt="Греція">
+          <div class="destination-info">
+            <h3>Греція</h3>
+            <p>Мальовничі острови, античні пам'ятки та середземноморська кухня</p>
+            <a href="#" class="cta-button">Детальніше</a>
+          </div>
+        </div>
+        
+        <div class="destination-card">
+          <img src="https://bukowina.org.ua/wp-content/uploads/2025/02/91951591.jpg" alt="Українські Карпати">
+          <div class="destination-info">
+            <h3>Українські Карпати</h3>
+            <p>Гірські хребти, неторкана природа та гуцульські традиції</p>
+            <a href="#" class="cta-button">Детальніше</a>
+          </div>
+        </div>
+        
+        <div class="destination-card">
+          <img src="https://yeremenko.ua/catalog/country/portugaliya/portugaliya_1.jpg" alt="Португалія">
+          <div class="destination-info">
+            <h3>Португалія</h3>
+            <p>Атлантичне узбережжя, історичні міста та смачні пиріжки паштел-де-ната</p>
+            <a href="#" class="cta-button">Детальніше</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <div class="logo">TRAVEL EXPLORERS</div>
+      <div>
+        <a href="#">Про нас</a>
+        <a href="#">Контакти</a>
+        <a href="#">Політика конфіденційності</a>
+      </div>
+      <p>© 2025 Travel Explorers. Всі права захищені.</p>
+    </footer>
+  </div>
+</body>
+</html>

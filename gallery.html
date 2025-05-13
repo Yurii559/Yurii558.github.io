@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Галерея - TravelExplorers</title>
+  <style>
+    :root {
+      --primary-color: #2A9D8F;
+      --secondary-color: #264653;
+      --accent-color: #E9C46A;
+      --light-bg: #F4F1DE;
+      --text-dark: #333;
+    }
+    
+    body {
+      font-family: 'Rosarivo', Regular;
+      background: var(--light-bg);
+      color: var(--text-dark);
+      margin: 0;
+    }
+    
+    .container {
+      max-width: 1350px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    
+    header {
+      position: relative;
+      color: white;
+    }
+    
+    header img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+      color: var(--accent-color);
+    }
+    
+    .logo a {
+      text-decoration: none;
+      color: var(--accent-color);
+    }
+    
+    .nav {
+      display: flex;
+      gap: 15px;
+      margin-right: 20px;
+    }
+    
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      background-color: rgba(233, 196, 106, 0.2);
+      white-space: nowrap;
+    }
+    
+    .nav a:hover {
+      background-color: var(--accent-color);
+      color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+    
+    .title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      color: var(--accent-color);
+      margin-bottom: 30px;
+    }
+    
+    section {
+      padding: 20px;
+    }
+    
+    h2 {
+      color: var(--secondary-color);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      
+    }
+    
+
+    
+    .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    
+    .item-caption {
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+      color: var(--text-dark);
+    }
+    
+    footer {
+      background: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    footer a {
+      color: var(--accent-color);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    /* Адаптивні стилі для мобільних пристроїв */
+    @media (max-width: 480px) {
+      header img {
+        height: 180px;
+      }
+      
+      .overlay {
+        padding: 15px;
+      }
+      
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .logo {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      
+      .nav {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-right: 0;
+        width: 100%;
+      }
+      
+      .nav a {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+      
+      .title {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      
+      section {
+        padding: 15px;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      .gallery-item img {
+        height: 150px;
+      }
+      
+      .item-caption {
+        padding: 10px;
+        font-size: 14px;
+      }
+      
+      footer {
+        padding: 15px;
+      }
+      
+      footer div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      
+      footer a {
+        margin: 5px 0;
+      }
+      
+      .container {
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="https://kompastour.com/useruploads/regions/region_8ede6b8fe2.jpg" alt="Галерея подорожей">
+      <div class="overlay">
+        <div class="topbar">
+          <div class="logo"><a href="index.html">TRAVEL EXPLORERS</a></div>
+          <div class="nav">
+            <a href="destinations.html">Напрямки</a>
+            <a href="blog.html">Блог</a>
+            <a href="tips.html">Поради</a>
+            <a href="gallery.html">Галерея</a>
+          </div>
+        </div>
+        <div class="title">Наші фотографії</div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Галерея подорожей</h2>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://www.moyaeuropa.com.ua/wp-content/uploads/2013/04/Venice-1024x571.jpg" alt="Італія">
+          <div class="item-caption">Венеція, Італія</div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://kompastour.com/useruploads/regions/region_8ede6b8fe2.jpg" alt="Японія">
+          <div class="item-caption">Кіото, Японія</div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://cdn.abo.media/upload/article/res/770-430/o_1e8jsdieilkm2iv17c71p6o1mh4dk.jpg" alt="Карпати">
+          <div class="item-caption">Карпати, Україна</div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://focus.ua/static/storage/thumbs/1200x630/8/f7/383643ca-a689f67337ad1d32bf2b86bc85afdf78.webp?v=8272_1">
+          <div class="item-caption">Мачу-Пікчу, Перу</div>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <div class="logo">TRAVEL EXPLORERS</div>
+      <div>
+        <a href="#">Про нас</a>
+        <a href="#">Контакти</a>
+        <a href="#">Політика конфіденційності</a>
+      </div>
+      <p>© 2025 Travel Explorers. Всі права захищені.</p>
+    </footer>
+  </div>
+</body>
+</html>
